@@ -1,7 +1,7 @@
 Cara menghubungkan koneksi PostgreSQL dengan trino, dan menampilkannya di superset (Run di terminal docker)
 
 (Run di terminal docker)
-1. Masuk ke container trino dengan docker exec (pastikan sudah menginstall trino dan container nya sudah ada)
+1. Masuk ke container trino dengan docker exec -it trino bash (pastikan sudah menginstall trino dan container nya sudah ada)
 2. Setelah itu cd ke trino/etc/catalog/
 3. Tambahin file baru di catalog yang namanya PostgreSQL.properties
 4. Touch PostgreSQL.properties (untuk membuat filenya)
@@ -23,5 +23,6 @@ postgresql://postgres:gantidenganpasswordpostgreskamu@host.docker.internal:5432/
 13. Create Data Chart baru dengan select database trino, schema public dan table yang ingin kita tampilkan
 14. Kemudian Create dataset and chart
 15. Dan lanjut isi sesuai dengan table yang kalian buat 
+
 
 Begitulah cara nya, salam coding ~
