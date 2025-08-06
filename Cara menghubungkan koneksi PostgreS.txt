@@ -1,0 +1,27 @@
+Cara menghubungkan koneksi PostgreSQL dengan trino, dan menampilkannya di superset (Run di terminal docker)
+
+(Run di terminal docker)
+1. Masuk ke container trino dengan docker exec (pastikan sudah menginstall trino dan container nya sudah ada)
+2. Setelah itu cd ke trino/etc/catalog/
+3. Tambahin file baru di catalog yang namanya PostgreSQL.properties
+4. Touch PostgreSQL.properties (untuk membuat filenya)
+5. cat etc/catalog/postgres.properties untuk masuk ke filenya
+6. isi file dengan perintah 
+7. echo "connector.name=postgresql
+connection-url=jdbc:postgresql://localhost:5432/nama_database
+connection-user=nama_user
+connection-password=password_lo" >
+
+8. Buka superset dan klik settings, cari yang namanya database connection
+9. Tambah database connection baru
+9, Isi display name "Trino"
+10. Isi bagian SQL ALCHEMY URL dengan
+postgresql://postgres:gantidenganpasswordpostgreskamu@host.docker.internal:5432/nama database yang ingin dikoneksikan misal belajar_superset
+
+11. Setelah itu tes koneksi, jika koneksi berhasil maka selamat kamu telah berhasil menghubungkan koneksi PostgreSQL kamu dengan Trino
+12. Selanjutnya cara menampilkan datanya bagaimana? misal ingin menampilkan data table
+13. Create Data Chart baru dengan select database trino, schema public dan table yang ingin kita tampilkan
+14. Kemudian Create dataset and chart
+15. Dan lanjut isi sesuai dengan table yang kalian buat 
+
+Begitulah cara nya, salam coding ~
